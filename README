@@ -1,0 +1,32 @@
+                            twisted-proxy
+                                   
+
+This daemon listens incoming HTTP requests, dumps it on output and relays
+request to the final server.
+
+It is useful for dumping URL, Headers and GET/POST variables that your
+browser can make behind your back.
+
+Screenshot
+==========
+
+  $ ./twisted-proxy.py -p 8888 -o /tmp/twisted-output.log
+  $ http_proxy=http://127.0.0.1:8888/ curl http://www.google.com
+
+Usage
+=====
+
+  $ ./twisted-proxy.py -h
+  Usage: twisted-proxy.py [options]
+  
+  Options:
+    -h, --help            show this help message and exit
+    -o FILE, --output=FILE
+                          Redirect output
+    -b, --body            Print response body (can be large!)
+    -v, --verbose         verbose mode
+    -p PORT, --port=PORT  Listening port
+    -a ADDRESS, --addr=ADDRESS
+                          Bind address (WARNING: Do not expose this daemon on
+                          Internet)
+
